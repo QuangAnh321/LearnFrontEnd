@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Speak</h2>
+
+<script>
+function Speak() {
+ var x = document.getElementById("demo").value;
+ var msg = new SpeechSynthesisUtterance(x);
+ window.speechSynthesis.speak(msg);
+}
+</script>
+
+<input type = "text" id = "demo" >
+<input type ="button" value = "Speak" onclick= "Speak()">
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<style>
+#box {
+
+background-color: white;
+    width: 300px;
+    border: 10px solid green;
+    padding: 25px;
+    margin: 25px;
+}
+
+</style>
+<body>
+
+<h1><strong>So xo VietLot</strong></h1>
+
+<p id="box">Count numbers: <output id="result"></output></p>
+<p id="box">Count numbers: <output id="result2"></output></p>
+<p id="box">Count numbers: <output id="result3"></output></p>
+<button onclick="startWorker()">Bat dau quay so</button> 
+<button onclick="stopWorker()">Dung quay so</button>
+
+<script>
+var w;
+
+function startWorker() {
+    if(typeof(Worker) !== "undefined") {
+        if(typeof(w) == "undefined") {
+            w = new Worker("demo_workers.js");
+        }
+        w.onmessage = function(event) {
+            document.getElementById("result").innerHTML = Math.floor(Math.random() * 10);
+            document.getElementById("result2").innerHTML = Math.floor(Math.random() * 10);
+            document.getElementById("result3").innerHTML = Math.floor(Math.random() * 10);
+            
+        };
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+    }
+}
+
+function stopWorker() { 
+    w.terminate();
+    w = undefined;
+}
+</script>
+
+</body>
+</html>
+

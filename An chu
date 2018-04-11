@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function Hidden() {
+var element = document.getElementById("demo");
+element.parentNode.removeChild(element);
+}
+</script>
+</head>
+<body>
+
+<button onclick="Hidden()">An de mat di</button>
+
+<p id = "demo">If you click on me, I will disappear.</p>
+
+</body>
+</html>

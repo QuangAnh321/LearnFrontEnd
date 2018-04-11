@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function Function1() {
+var length1 = 1;
+var msg1 = new SpeechSynthesisUtterance(length1);
+window.speechSynthesis.speak(msg1);
+}
+
+function Function2() {
+var length2 = 2;
+var msg2 = new SpeechSynthesisUtterance(length2);
+window.speechSynthesis.speak(msg2);
+}
+
+function Function3() {
+var length3 = 3;
+var msg3 = new SpeechSynthesisUtterance(length3);
+window.speechSynthesis.speak(msg3);
+}
+</script>
+</head>
+<body>
+
+<h2>Chuong trinh doc so</h2>
+<button type="button" onclick="Function1()">So1</button>
+<button type="button" onclick="Function2()">So2</button>
+<button type="button" onclick="Function3()">So3</button>
+
+</body>
+</html>
